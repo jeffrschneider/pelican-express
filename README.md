@@ -6,13 +6,14 @@ the pelican, bike, road, terrain, trees, sky, lettering and sign emblems are all
 (no SVG, no 2D canvas, no external models or textures).
 
 - **`index.html`** - the scene. Open it in a modern browser (needs internet once, for three.js from a CDN).
-- **`video/pelican-express.mp4`** - the 90-second ride rendered to video (Chase camera, 1280x720, 30 fps).
+- **`video/pelican-express.mp4`** - the ride rendered to video (Chase camera the whole way, 1280x720, 30 fps, 91 s, with a jolly soundtrack).
 - **`data/agents.csv`** - the 53 agents, launch dates, what each date marks, and sign position on the road.
 - **`data/sources.md`** - where the dates came from, and the caveats.
 
 ## Watching it
 
-Open `index.html`. The ride starts by itself and takes 90 seconds. Keys: `Space` pause/replay, `R` restart,
+Open `index.html`. The ride starts by itself in the Chase view and takes 90 seconds (no on-screen buttons or
+timeline bar; everything is keyboard-driven). Keys: `Space` pause/replay, `R` restart,
 `1` chase, `2` auto-cut cameras, `3` side, `4` front, `5` free orbit, `←`/`→` skip 5 s. Hover a sign for
 its date and what the date marks.
 
@@ -55,8 +56,24 @@ reproduced exactly. Expect roughly 1.4 s per frame per worker at 720p.
 ```
 cd tools/video && npm install
 node render.mjs 0 1365 30 frames &  node render.mjs 1365 2730 30 frames &  wait   # two workers
-./encode.sh 30 20                                                                 # -> ../../video/pelican-express.mp4
+./encode.sh 30 26                                                                 # -> ../../video/pelican-express.mp4
 ```
+
+`encode.sh` muxes `tools/music/pelican-express.wav` in as AAC if that file exists (see below); otherwise the
+video is silent.
 
 Each worker pre-runs 4 s of camera smoothing before its first frame, so chunks join seamlessly.
 Needs `ffmpeg` on the PATH.
+
+## The music
+
+`tools/music/make_music.py` composes and renders the soundtrack from scratch (numpy + scipy, no samples): a
+128 bpm major-key tune for xylophone, glockenspiel, bass, off-beat accordion-style stabs and a simple drum kit,
+with a bicycle bell here and there and a big D-major finale that lands on the last sign at t = 90.0 s.
+
+```
+cd tools/music && pip install numpy scipy
+python3 make_music.py pelican-express.wav 91     # 91 s, 48 bars; the WAV is git-ignored, the MP4 has the AAC copy
+```
+
+Change the chord lists / `SECTIONS` at the top of the script to re-arrange it.
