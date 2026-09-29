@@ -1,0 +1,54 @@
+launch_date,date_is_estimate,agent,category,what_the_date_marks,road_position_m
+2022-12-08,no,"ASTRBOT","Self-operated gateway","Repo created",0.0
+2023-03-21,no,"LINDY","Hosted service","Assistant revealed with waitlist",25.7
+2024-06-10,no,"AGENT ZERO","Self-operated gateway","First commit",51.7
+2025-03-06,no,"MANUS","Hosted service","Invite-only preview announced",77.7
+2025-09-08,no,"POKE","Hosted service","Public launch with seed round",103.7
+2025-11-24,no,"OPENCLAW","Self-operated gateway","Repo created (as warelay)",129.0
+2025-12-16,no,"LETTA","Hosted service","Letta Code announced",148.6
+2026-01-08,yes,"VIOLA","Device assistant","Estimate from terms date",168.4
+2026-01-12,no,"CLAUDE COWORK","Hosted service","Research preview",181.2
+2026-01-22,no,"BLOCKIT","Hosted service","Emerged from stealth",196.8
+2026-01-25,no,"NEBULA","Hosted service","First public announcement",209.1
+2026-01-28,yes,"LAZZY","Device assistant","Estimate from privacy policy date",221.3
+2026-01-29,no,"MOLTWORKER","Operator stack","Cloudflare blog post",232.4
+2026-01-31,no,"NANOCLAW","Self-operated gateway","Repo created",244.1
+2026-02-01,no,"NANOBOT","Self-operated gateway","Repo created and launched",255.2
+2026-02-07,no,"MICROCLAW","Self-operated gateway","First commit",269.0
+2026-02-07,no,"MIMICLAW","Specialized device","First public post",279.5
+2026-02-09,no,"PICOCLAW","Self-operated gateway","Launch and v0.0.1",291.2
+2026-02-09,no,"TINYAGI","Self-operated gateway","First commit as TinyClaw",301.7
+2026-02-09,no,"BABYCLAW","Self-operated gateway","First commit",312.2
+2026-02-11,no,"HAPPYCAPY","Hosted service","Product Hunt launch",323.9
+2026-02-12,no,"IRONCLAW","Self-operated gateway","First release v0.1.0",335.0
+2026-02-12,no,"MOLTIS","Self-operated gateway","Launch announced",345.5
+2026-02-13,no,"ZEROCLAW","Self-operated gateway","Repo created",356.6
+2026-02-13,no,"ZEPTOCLAW","Self-operated gateway","Launch",367.1
+2026-02-15,no,"MAJORDOMO","Hosted service","iOS App Store v1.0",378.8
+2026-02-15,no,"HERMITCLAW","Self-operated gateway","Initial release",389.3
+2026-02-15,no,"LOBU","Self-operated gateway","Renamed to Lobu",399.8
+2026-02-15,no,"DROIDCLAW","Specialized device","Announcement",410.3
+2026-02-17,no,"NULLCLAW","Self-operated gateway","First commit",422.0
+2026-02-17,no,"EASYCLAW","Device assistant","First commit",432.5
+2026-02-21,no,"ZCLAW","Specialized device","Show HN and first tag",445.3
+2026-02-25,no,"HERMES AGENT","Self-operated gateway","Announcement and public release",458.1
+2026-02-26,no,"OPENFANG","Self-operated gateway","First commit and v0.1.0",469.2
+2026-02-27,no,"QWENPAW","Self-operated gateway","First public release (as CoPaw)",480.3
+2026-03-11,no,"PERPLEXITY PERSONAL COMPUTER","Device assistant","Mac announced with waitlist",496.7
+2026-03-16,no,"NVIDIA NEMOCLAW","Operator stack","Announced at GTC",510.0
+2026-05-05,no,"TRUSTCLAW","Self-operated gateway","Open-source repo first commit",533.9
+2026-05-19,no,"GEMINI SPARK","Hosted service","Announced at Google I/O",551.1
+2026-06-02,no,"MICROSOFT SCOUT","Device assistant","Announced at Build (private preview)",568.2
+2026-07-09,no,"CHATGPT WORK","Hosted service","Staged release",590.7
+2026-08-11,no,"GROK BOT","Hosted service","Beta launch",612.6
+2026-08-25,no,"FO","Newest launch","Alpha, invite-only",629.7
+2026-08-26,no,"AKO","Hosted service","Public launch announcement",640.8
+2026-08-26,no,"INSTINCT","Hosted service","Public announcement, invite-only beta",651.3
+2026-09-01,no,"FAMBOT","Newest launch","Free public beta",665.1
+2026-09-02,no,"CATCH","Newest launch","Emerged from stealth",676.2
+2026-09-08,no,"META MUSE","Hosted service","US launch on web, iOS, Android",690.0
+2026-09-11,no,"OPENMUSE","Newest launch","Show HN, early preview",702.3
+2026-09-16,no,"SAI","Newest launch","General availability",715.6
+2026-09-16,no,"RENE","Newest launch","Multiplayer launch announced",726.1
+2026-09-17,no,"HAVEN","Newest launch","Public launch from private beta",737.2
+2026-09-22,no,"RABBIT OS3","Newest launch","General release",750.5

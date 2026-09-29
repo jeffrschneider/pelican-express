@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pelican Express — a timeline of personal agents</title>
+<style>
+  :root { --ink:#f4f1ea; --glass:rgba(18,22,30,.58); --line:rgba(255,255,255,.16); --accent:#ffb03a; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; overflow:hidden; background:#e6dccd; font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); }
+  #stage { position:fixed; inset:0; }
+  #stage canvas { display:block; }
+  .glass { background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line); border-radius:14px; }
+  #title { position:fixed; left:18px; top:16px; padding:10px 16px; max-width:min(60vw,420px); }
+  #title h1 { margin:0; font-size:15px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
+  #title p { margin:3px 0 0; font-size:12px; opacity:.75; }
+  #dateBox { position:fixed; right:18px; top:16px; padding:10px 16px; text-align:right; min-width:170px; }
+  #dateVal { font:700 26px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.04em; color:var(--accent); }
+  #dateSub { margin-top:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.8; max-width:230px; margin-left:auto; }
+  #legend { position:fixed; left:18px; bottom:20px; padding:10px 12px; font-size:11px; line-height:1; display:grid; gap:7px; }
+  #legend div { display:flex; align-items:center; gap:8px; opacity:.9; }
+  #legend b { width:14px; height:14px; display:inline-block; }
+  #tip { position:fixed; pointer-events:none; opacity:0; transition:opacity .12s; padding:10px 13px; width:236px; background:rgba(14,17,24,.86); border:1px solid var(--line); border-radius:11px; display:grid; gap:3px; z-index:5; }
+  #tip b { font-size:13px; letter-spacing:.06em; } #tip span { font:600 12px ui-monospace,Menlo,monospace; color:var(--accent); }
+  #tip em { font-style:normal; font-size:12px; opacity:.9; } #tip small { font-size:10px; opacity:.6; letter-spacing:.08em; text-transform:uppercase; margin-top:2px; }
+  #loading,#fatal { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:13px; letter-spacing:.14em; text-transform:uppercase; background:#1a1d24; z-index:20; text-align:center; padding:24px; }
+  #fatal { display:none; line-height:1.6; }
+  @media (max-width:640px) { #legend { display:none; } #title p { display:none; } #dateVal { font-size:20px; } }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<div id="title" class="glass"><h1>Pelican Express</h1><p>53 personal agents, oldest to newest. A bigger gap between launch dates means a longer stretch of road.</p></div>
+<div id="dateBox" class="glass"><div id="dateVal">----</div><div id="dateSub"></div></div>
+
+<div id="legend" class="glass">
+  <div><b style="background:#0b7a4b;border-radius:3px"></b>Hosted service</div>
+  <div><b style="background:#1456b8;border-radius:50%"></b>Device assistant</div>
+  <div><b style="background:#f7c600;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)"></b>Self-operated gateway</div>
+  <div><b style="background:#f06a00;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)"></b>Operator stack</div>
+  <div><b style="background:#b9e000;clip-path:polygon(0 100%,100% 100%,100% 40%,50% 0,0 40%)"></b>Specialized device</div>
+  <div><b style="background:#c8102e;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)"></b>Newest launch</div>
+</div>
+
+<div id="tip"></div>
+<div id="loading">Loading the road…</div>
+<div id="fatal">Couldn't load three.js from the CDN.<br>Check your connection and reload.</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+let THREE, OrbitControls;
+try {
+  THREE = await import('three');
+  ({ OrbitControls } = await import('three/addons/controls/OrbitControls.js'));
+} catch (err) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('fatal').style.display = 'flex';
+  throw err;
+}

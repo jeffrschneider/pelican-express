@@ -1,0 +1,11 @@
+{
+  "name": "pelican-express-video",
+  "private": true,
+  "type": "module",
+  "description": "Frame-by-frame video export for the Pelican Express scene",
+  "dependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "puppeteer-core": "25.12.0",
+    "three": "0.160.0"
+  }
+}
